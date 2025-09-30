@@ -61,8 +61,7 @@ interface CacheInterface
      * @return iterable<string, mixed> A list of key => value pairs. Cache keys that do not exist or are stale will have $default as value.
      *
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     *   MUST be thrown if $keys is neither an array nor a Traversable,
-     *   or if any of the $keys are not a legal value.
+     *   MUST be thrown if any of the $keys are not a legal value.
      */
     public function getMultiple(iterable $keys, mixed $default = null): iterable;
 
@@ -77,8 +76,7 @@ interface CacheInterface
      * @return bool True on success and false on failure.
      *
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     *   MUST be thrown if $values is neither an array nor a Traversable,
-     *   or if any of the $values are not a legal value.
+     *   MUST be thrown if any of the $values are not a legal value.
      */
     public function setMultiple(iterable $values, null|int|\DateInterval $ttl = null): bool;
 
@@ -90,8 +88,7 @@ interface CacheInterface
      * @return bool True if the items were successfully removed. False if there was an error.
      *
      * @throws \Psr\SimpleCache\InvalidArgumentException
-     *   MUST be thrown if $keys is neither an array nor a Traversable,
-     *   or if any of the $keys are not a legal value.
+     *   MUST be thrown if any of the $keys are not a legal value.
      */
     public function deleteMultiple(iterable $keys): bool;
 
